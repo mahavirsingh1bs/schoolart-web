@@ -12,4 +12,5 @@ import com.bhageshri.schoolart.domain.User;
  */
 public interface UserDAO extends GenericDAO<Long, User> {
     User findUser(String username, char[] password, Long schoolId);
+    User findUser(String username, char[] password);
 }

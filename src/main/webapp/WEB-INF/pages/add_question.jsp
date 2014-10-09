@@ -1,6 +1,6 @@
 <%-- 
     Document   : take_exam
-    Created on : Oct 8, 2014, 10:00:01 AM
+    Created on : Oct 9, 2014, 10:00:01 AM
     Author     : mahavir.singh
 --%>
 
@@ -38,8 +38,8 @@
         <div class="login-area">
             <div class="login-box">
                 <div class="title-box">
-                    <div class="heading">Take Exam</div>
-                    <div class="sub-heading">Please Select the Exam...</div>
+                    <div class="heading">Add Question</div>
+                    <div class="sub-heading">Please enter question...</div>
                 </div>
             </div>
         </div>
@@ -48,12 +48,9 @@
             <table name="exam_table" align="center" width="900px">
                 <div>
                 <tr>
-                    <td><div class="title">Exam:</div></td>
+                    <td><div class="title">Question:</div></td>
                     <td>
-                        <p style="width:350px;">
-                        <select name="exam" class="form-control">
-                        </select>
-                        </p>
+                        <input type="text" name="question" class="form-control" />
                     </td>
 
                 </tr>
@@ -67,9 +64,7 @@
             
         <br/><br/>
         <div class="action-area" style="width:70%">
-            <p style="width:85%;">
             <button name="submit" class="btn btn-primary">Submit</button>
-            </p>
             <div style="clear:both;"></div>
         </div>
         
@@ -159,7 +154,6 @@
                                         $answer_tr.append('<td><td/>');
                                         $answer_tr.append('<td><p>Ans. </p><input type="checkbox">True</input>&nbsp;<input type="checkbox">False</input></p><td/>');
                                     }
-                                    $answer_tr.append('<td><input type="hidden" value="' + questions[j].answer + '" class="_answer"/></td>');
                                     $question_table.append($answer_tr);
                                 }
                             }

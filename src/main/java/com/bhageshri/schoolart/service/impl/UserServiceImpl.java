@@ -51,5 +51,14 @@ public class UserServiceImpl implements UserService {
     public void setUserDAO(UserDAO userDAO) {
         this.userDAO = userDAO;
     }
+
+    @Override
+    public boolean login(String username, char[] password) {
+        User user = userDAO.findUser(username, password);
+        if (user != null) {
+            return true;
+        }
+        return false;
+    }
     
 }
