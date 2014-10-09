@@ -1,0 +1,44 @@
+[
+    {
+        "id":1,
+        "name":"Very Short Questions",
+        "constant":"VERY_SHORT",
+        "class": "veryShort"
+    },
+    {
+        "id":2,
+        "name":"Short Questions",
+        "constant":"SHORT",
+        "class": "short"
+    },
+    {
+        "id":3,
+        "name":"Long Questions",
+        "constant":"LONG",
+        "class": "long"
+    },
+    {
+        "id":4,
+        "name":"Fill in the blanks",
+        "constant":"FILL_IN_THE_BLANK",
+        "class": "fillTheBlank"
+    },
+    {
+        "id":5,
+        "name":"Define",
+        "constant":"DEFINE",
+        "class": "define"
+    },
+    {
+        "id":6,
+        "name":"Matching",
+        "constant":"MATCH",
+        "class": "match"
+    },
+    {
+        "id":7,
+        "name":"True or False",
+        "constant":"TRUE_FALSE",
+        "class": "trueOrFalse"
+    }
+]

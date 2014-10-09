@@ -1,0 +1,69 @@
+
+body {
+    background-color: #7994d2;
+    color: #0b1a22;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+}
+body div#first_half tbody td label {
+    width: 260px;
+}
+body div#first_half tbody td:first-child {
+    width: 130px;
+}
+body div#first_half {
+    background-color: #c7c557;
+    padding: 20px 50px 40px;
+}
+button {
+    background-color: #7994d2;
+    font-weight: bold;
+    height: 30px;
+    width: 100px;
+}
+select {
+    background-color: #c6ece5;
+    padding: 2px;
+    width: 152px;
+}
+input {
+    background-color: #c6ece5;
+    padding: 2px;
+}
+td label {
+    width: 200px;
+}
+td._no_of_questions_td {
+    width: 250px;
+}
+body div#second_half {
+    background-color: #b0a7e2;
+    height: 125px;
+}
+td._marks_per_question_td {
+    width: 250px;
+}
+td._question_type_td {
+    width: 180px;
+}
+h4 {
+    color: #1c1132;
+}
+input._exam_name {
+    background-color: #c6ece5;
+    padding: 2px;
+    width: 145px;
+}
+tr._question_title_tr {
+    height: 35px;
+    margin-top: 40px;
+    vertical-align: bottom;
+}
+td._section_title_td {
+    color: #637728;
+}
+
+div{
+    width: 900px;
+}

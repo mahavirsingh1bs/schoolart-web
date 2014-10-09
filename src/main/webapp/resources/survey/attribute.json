@@ -1,0 +1,24 @@
+{
+	"deviceTypes" : [{
+	    "type" : "Mobile",
+	    "attributes" : [
+	        "osName",
+	        "osVersion",
+	        "resolutionHeight",
+	        "resolutionWidth",
+	        "screenSize",
+	        "browser"
+	    ]
+	},
+	{
+	    "type" : "Tablet",
+	    "attributes" : [
+	        "osName",
+	        "osVersion",
+	        "resolutionHeight",
+	        "resolutionWidth",
+	        "screenSize",
+	        "browser"
+	    ]
+	}]
+}

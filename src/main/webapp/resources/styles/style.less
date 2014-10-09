@@ -1,0 +1,349 @@
+body{
+	font-family: arial;
+	font-size: 14px;
+	background: #efefef;
+}
+.main-container{
+	width: 100%;
+
+	.header{
+		width: 100%;
+		padding: 10px;
+		background: #fff;
+		border-bottom: 2px solid #ccc;
+
+		.logo{
+			margin: 15px 10px;
+		}
+	}
+
+	.login-area{
+		box-shadow: 2px 2px 10px #999999; 
+		width: 402px; 
+		background: #fff; 
+		border-radius: 5px; 
+		border: 1px solid #CCCCCC;
+		margin: 50px auto;
+		
+		img{width: 400px;}
+		
+		.login-box{
+			padding: 10px 20px;
+			width: 400px;
+			border-radius: 5px 5px 0 0 ;
+			border-bottom: 1px solid #ccc;
+
+			.title-box{
+				display: inline-block;
+				
+				.heading{
+					font-size: 24px;
+					color: #333;
+				}
+				
+				.sub-heading{
+					color: #999;
+					font-size: 12px;
+				}
+			}
+			
+			.lock{
+				float: right;
+				color: #ccc;
+			}
+		}
+		
+		.filed-area{
+			padding: 10px 20px;
+			
+			
+			.title{
+				color: #999;
+				padding: 5px 0;
+			}
+			
+			.validation{
+				color: red;
+				font-size: 12px;
+				display: none;
+			}
+		}
+		
+		.action-area{
+			 padding: 10px 20px 20px;
+			
+			span{
+				color: #999999;
+				display: inline-block;
+				font-size: 12px;
+				padding: 3px 0 0 5px;
+				vertical-align: top;
+			}
+			
+			button{
+				float: right;
+			}
+		}
+	}
+	
+	.report-area{
+		width: 100%;
+		box-shadow: none;
+		margin: 15px 0 0 0;
+
+		
+		.report-box{
+			width: 100%;
+			border-radius: 0px;
+		}
+	}
+	
+	.form-control{ 
+		height: 40px;
+	}
+	
+	.links{
+		width: 100%;
+		text-align: center;
+		display: inline-block;
+		
+		
+		a{	
+			color: white;
+			margin: 10px 0;
+			padding: 5px 10px;
+			background: #428BCA; 
+			display: inline-block;
+			width: 230px;
+			border: 1px solid white;
+			border-radius: 5px;
+		
+			&:hover{
+				text-decoration: none;
+				background: white;
+				color: #428BCA;
+				border: 1px solid #428BCA;
+			}
+			
+			&:focus{
+				text-decoration: none;
+			}
+		}
+	}
+	
+	/*Report page Start*/
+		.col-md-2{
+			padding:0px;
+		}
+		
+		.filter-box{
+			background: none repeat scroll 0 0 #fff;
+			height: 700px;
+			width: 100%;
+			padding: 15px;
+			
+			.title{
+				font-size: 20px;
+				color: #333;
+				
+				.line{
+					color: #ccc;
+				}
+			}
+			
+			.platform-box{
+				width: 100%;
+				height: auto;
+				
+				.android{
+					height: 40px;
+					border: 1px solid #ccc;
+					padding-right: 5px;
+					diasplay: inline-block;
+					margin: 5px 0;
+					
+					.box{
+						background: none repeat scroll 0 0 #EEEEEE;
+						float: left;
+						padding: 8px;
+						width: 31px;
+					}
+					
+					.name{
+							font-size: 18px;
+							color: #666;
+							padding: 5px 0 0 10px;
+							display: inline-block;
+					}
+					
+					i{
+						float: right;
+						padding: 5px 5px 0 0;
+						color: #97c024;
+					}
+				}
+				
+				.apple{
+					height: 40px;
+					
+					i{
+						float: right;
+						padding: 5px 5px 0 0;
+						color: #56c5ff;
+					}
+					
+				}
+			}
+			
+			.attribute-area{
+				width: 100%;
+				margin: 20px 0;
+				
+				.title{
+					font-size: 18px;
+					color: #666;
+					padding: 5px 0;
+				}
+				
+				.attribute-box{
+					width: 100%;
+					border: 1px solid #ccc;
+					padding: 10px;
+					
+					.values{
+						margin: 3px 0px;
+						
+						span{
+							color: #666;
+							font-size: 16px;
+						}
+					}
+					
+					.point{
+						color: #999;
+						font-size: 14px;
+					}
+					.point2{
+						color: #999;
+						font-size: 14px;
+						float: right;
+					}
+					
+					p{
+						margin: 8px 0 0 0;
+						
+						label{
+							padding: 5px  0 0 0;
+							font-weight: normal;
+						}
+						
+						input{
+							border: 0;
+							color: black;
+							color: #f6931f;
+							width: 50%;
+							font-weight: bold;
+						}
+					}
+					
+					#slider-range{
+						margin: 8px 0 0 0;
+					}
+				}
+			}
+			
+			/*For Slider Start*/
+				.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+					background: none repeat scroll 0 0 #FFFFFF;
+					border: 2px solid #999999;
+					border-radius: 15px;	
+				}
+				
+				.ui-state-default:hover{
+					cursor: pointer;
+				}
+
+				.ui-widget-header{
+					background: #ffb848;
+				}
+			/*For Slider End*/
+			
+			
+			.action{
+				float: right;
+				
+				.reset{
+					background: none;
+					border: none;
+					color: #666;
+					font-size: 14px;
+				}
+			}	
+		}
+		
+		.details{
+			margin: 10px 0 0 0;
+			width: 101%;
+			
+			>div{	
+				margin: 0px 0px 0 -13px;
+			}	
+			
+			.report-div{
+				margin: 0px 0px 0 10px;
+			}
+			
+			div{
+				background: #fff;
+				border: 1px solid #ccc;
+				
+				.heading{
+					font-size: 16px;
+					color: #666;
+					padding: 10px 0;
+					display: inline-block;
+				}
+
+				.fa-android{
+					top: 4px;
+					left: 5px;
+					position: relative;
+					color: #97c024;
+				}
+				
+				.fa-apple{
+					top: 5px;
+					left: 8px;
+					position: relative;
+					color: #56c5ff;
+				}				
+			}
+			
+			.chart{
+				text-align: center;
+				margin: 0 0 10px 0; 
+			}
+			
+			
+		}
+	
+	/*Report page End*/
+	
+	.footer{
+		background: #666;
+		width: 100%;
+		padding: 10px;
+		height: 100px;
+		float: left;
+		
+		.reserved{
+			color: #FFFFFF;
+			margin: 0 auto;
+			width: 270px;
+		}
+	}
+}
+
+#ex1Slider .slider-selection {
+	background: #BABABA;
+}
