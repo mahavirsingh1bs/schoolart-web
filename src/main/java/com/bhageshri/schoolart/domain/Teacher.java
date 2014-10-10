@@ -37,6 +37,14 @@ public class Teacher implements Serializable {
             valueColumnName = "PK_VALUE")
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "teacherIdGenerator")
     private Long id;
+
+    public Teacher() { }
+    
+    public Teacher(String firstName, String lastName, Address address) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+    }
     
     @Column(name = "FIRST_NAME")
     private String firstName;

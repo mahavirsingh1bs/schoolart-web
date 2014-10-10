@@ -50,7 +50,7 @@ public class LoginController {
             returnTo = "redirect:showCreateExam";
         } else {
             modelMap.put("error", "username or password is invalid");
-            returnTo = "login";
+            returnTo = "showLogin";
         }
         
         return returnTo;
