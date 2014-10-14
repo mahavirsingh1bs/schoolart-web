@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="Player">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Name" type="xs:string" />
+                <xs:element name="Surname" type="xs:string" />
+                <xs:element name="Position" type="PositionType" />
+                <xs:element name="Age" type="xs:int" />
+                <xs:element name="TeamName" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:simpleType name="PositionType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="GK" />
+            <xs:enumeration value="DEF" />
+            <xs:enumeration value="MID" />
+            <xs:enumeration value="ATT" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+</xs:schema>

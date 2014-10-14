@@ -18,7 +18,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="<%=request.getContextPath()%>/resources/styles/schoolart.css" rel="stylesheet">
     -->
-    <title>Schoolart | Take Exam</title>
+    <title>Schoolart | Add Question</title>
     <!-- Bootstrap core CSS -->
     <link href="<%= request.getContextPath()%>/resources/styles/bootstrap.css" rel="stylesheet">
     <!-- Bootstrap CSS Ends -->
@@ -50,15 +50,14 @@
                 <tr>
                     <td><div class="title">Question:</div></td>
                     <td>
-                        <input type="text" name="question" class="form-control" />
+                        <textarea id="question" name="question" rows="4" cols="100"></textarea>
                     </td>
-
                 </tr>
                 </div>
             </table>
             <br/>
-            <table name="question_table" align="center" width="900px">
-        
+            <table name="question_table" align="right" width="500px">
+                
             </table>
         </div>
             
@@ -75,95 +74,12 @@
     </div>
     <script type='text/javascript' src='<%= request.getContextPath()%>/resources/scripts/less-1.7.3.min.js'></script>
     <script type='text/javascript' src='<%= request.getContextPath()%>/resources/scripts/jquery-1.10.2.min.js'></script>
+    <script type='text/javascript' src='<%= request.getContextPath()%>/resources/scripts/ckeditor/ckeditor.js'></script>
+    <script type='text/javascript' src='<%= request.getContextPath()%>/resources/scripts/ckeditor/adapters/jquery.js'></script>
     <script src="<%= request.getContextPath()%>/resources/scripts/bootstrap.js"></script>
     <script>
         $(document).ready(function() {
-            var types = ["VERY_SHORT", "SHORT", "LONG", "FILL_IN_THE_BLANK", "DEFINE", "MATCH", "TRUE_FALSE"];
-            $.ajax({
-                url: "exams",
-                type: 'GET',
-                async: false,
-                dataType: 'json',
-                success: function(data) {
-                    $('select[name=exam]').text('');
-                    $('select[name=exam]').append('<option value="-1">select</option>');
-                    if (data) {
-                        for (var i = 0; i < data.length; i++) {
-                            $('select[name=exam]').append('<option value="' + data[i].id + '">' + data[i].name + '</option>');
-                        }
-                    }
-                }, error: function (data) {
-                    console.log('we got error while getting exams');
-                    console.log(data);
-                }
-            });
-            
-            $('select[name=exam]').on('change', function() {
-                var examId = $('select[name=exam] :selected').val();
-                $.ajax({
-                    url: "exam/" + examId,
-                    type: 'GET',
-                    async: false,
-                    dataType: 'json',
-                    success: function(data) {
-                        console.log(data);
-                        $('table[name=question_table]').html('');
-                        if (data) {
-                            var $question_table = $('table[name=question_table]');
-                            var section_no = 1;
-                            for (var i = 0; i < types.length; i++) {
-                                var questions = data[types[i]];
-                                if (typeof questions !== 'undefined' && questions.length > 0) {
-                                    var section_char = String.fromCharCode(64 + section_no++);
-                                    $question_table.append('<tr></tr><tr></tr>');
-                                    var $section_tr = $('<tr>');
-                                    $section_tr.append('<td></td><td></td>');
-                                    $section_tr.append('<td class="_section_title_td" style="color: #637728;"><p>' + section_char + '. Please give the answer to ' + types[i] + ' questions.</p>');
-                                    $question_table.append($section_tr);
-                                }
-
-                                var question_no = 1;
-                                for (var j = 0; (typeof questions !== 'undefined') && j < questions.length; j++) {
-                                    var $question_tr = $('<tr class="_question_title_tr">');
-                                    $question_tr.append('<td><input type="hidden" value="' + questions[j].id + '"/><td/>');
-                                    $question_tr.append('<td><p><label>Q.' + question_no++ + '</label> ' + questions[j].question + '</p><td/>');
-                                    $question_table.append($question_tr);
-                                    var $answer_tr = $('<tr>');
-                                    if (types[i] === 'VERY_SHORT') {
-                                        $answer_tr.append('<td><td/>');
-                                        $answer_tr.append('<td><p>Ans. <input type="text" size="25" /></p><td/>');
-                                    } else if (types[i] === 'SHORT' || types[i] === 'DEFINE') {
-                                        $answer_tr.append('<td><td/>');
-                                        $answer_tr.append('<td><p>Ans. <textarea rows="2" cols="50"></textarea></p><td/>');
-                                    } else if (types[i] === 'LONG') {
-                                        $answer_tr.append('<td><td/>');
-                                        $answer_tr.append('<td><p>Ans. <textarea rows="5" cols="50"></textarea></p><td/>');
-                                    } else if (types[i] === 'FILL_IN_THE_BLANK') {
-                                        $answer_tr.append('<td><td/>');
-                                        var $td = $('<td>');
-                                        var $p = $('<p>');
-                                        $p.append('Ans. ');
-                                        var answers = questions[j].answer.split(',');
-                                        for (var k = 0; k < answers.length - 1; k++) {
-                                            $p.append('<input type="text" size="15"/>,&nbsp;');
-                                        }
-                                        $p.append('<input type="text" size="15"/>');
-                                        $td.append($p);
-                                        $answer_tr.append($td);
-                                    } else if (types[i] === 'TRUE_FALSE') {
-                                        $answer_tr.append('<td><td/>');
-                                        $answer_tr.append('<td><p>Ans. </p><input type="checkbox">True</input>&nbsp;<input type="checkbox">False</input></p><td/>');
-                                    }
-                                    $question_table.append($answer_tr);
-                                }
-                            }
-                        }
-                    }, error: function (data) {
-                        console.log('we got error while getting subjects');
-                        console.log(data);
-                    }
-                });
-            });
+            $('textArea#question').ckeditor({ toolbar : [], width : 600, height: 70 });
         });
     </script>
 </body>

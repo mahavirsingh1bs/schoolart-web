@@ -25,4 +25,9 @@ public class ViewController {
     public String showAddTeacher() {
         return "add_teacher";
     }
+    
+    @RequestMapping(value = "/ShowAddQuestion", method = RequestMethod.GET)
+    public String showAddQuestion() {
+        return "add_question";
+    }
 }

@@ -9,21 +9,6 @@
 
     <name>schoolart-web</name>
 
-    <repositories>
-      <repository>
-        <url>http://download.java.net/maven/glassfish</url>
-        <id>glassfish-repository</id>
-        <layout>default</layout>
-        <name>Repository for glassfish</name>
-      </repository>
-      <repository>
-        <url>http://download.eclipse.org/rt/eclipselink/maven.repo/</url>
-        <id>eclipselink</id>
-        <layout>default</layout>
-        <name>Repository for library EclipseLink (JPA 2.1)</name>
-      </repository>
-    </repositories>
-
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -38,13 +23,34 @@
         <project.mockito.version>1.9.5</project.mockito.version>
         <project.slf4j.version>1.7.7</project.slf4j.version>
         <project.log4j.version>1.2.15</project.log4j.version>
+        <project.camel.version>2.14.0</project.camel.version>
+        <project.activemq.version>5.6.0</project.activemq.version>
+        <project.springsecurity.version>3.2.5.RELEASE</project.springsecurity.version>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>spring-release</id>
+            <url>http://maven.springframework.org/release</url>
+        </repository>
+        <repository>
+            <id>eclipselink</id>
+            <url>http://download.eclipse.org/rt/eclipselink/maven.repo/</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <!--
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
+            <version>6.0</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-endorsed-api</artifactId>
             <version>6.0</version>
             <scope>provided</scope>
         </dependency>
@@ -105,6 +111,25 @@
             <artifactId>spring-integration-mail</artifactId>
             <version>4.0.3.RELEASE</version>
 	</dependency>
+        
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jms</artifactId>
+            <version>${project.spring.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-oxm</artifactId>
+            <version>${project.spring.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>2.2.7</version>
+        </dependency>
+        
         <dependency>
 	    <groupId>javax.mail</groupId>
 	    <artifactId>mail</artifactId>
@@ -252,6 +277,61 @@
                 </exclusion>
             </exclusions>
             <scope>runtime</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-core</artifactId>
+            <version>${project.camel.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-spring</artifactId>
+            <version>${project.camel.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-jms</artifactId>
+            <version>${project.camel.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-core</artifactId>
+            <version>${project.activemq.version}</version>
+        </dependency>
+        <!--
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-camel</artifactId>
+            <version>${project.activemq.version}</version>
+        </dependency>
+        -->
+
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-</artifactId>
+            <version>${project.activemq.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${project.springsecurity.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${project.springsecurity.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${project.springsecurity.version}</version>
         </dependency>
         
     </dependencies>
